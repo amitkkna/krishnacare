@@ -9,17 +9,16 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Our Partners', href: '#partners' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-primary-800 text-white py-2 px-4">
+      <div className="bg-gradient-to-r from-orange-600 to-amber-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
             <div className="flex items-center">
@@ -44,7 +43,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <div className="bg-primary-600 text-white p-3 rounded-lg mr-3">
+                <div className="bg-gradient-to-br from-orange-500 to-amber-500 text-white p-3 rounded-lg mr-3 shadow-lg">
                   <span className="text-2xl font-bold">KC</span>
                 </div>
                 <div>
@@ -60,7 +59,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
+                  className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -70,8 +69,8 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden md:flex">
               <Link
-                href="#contact"
-                className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                href="/contact"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 font-medium shadow-lg hover:shadow-xl"
               >
                 Get Quote
               </Link>
@@ -81,7 +80,7 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-primary-600"
+                className="text-gray-700 hover:text-orange-600"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -97,7 +96,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -105,8 +104,8 @@ const Header = () => {
               ))}
               <div className="px-3 py-2">
                 <Link
-                  href="#contact"
-                  className="block w-full text-center bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                  href="/contact"
+                  className="block w-full text-center bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-2 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get Quote

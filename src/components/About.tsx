@@ -1,253 +1,132 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Users, Award, Clock, Briefcase, Target, Eye, CheckCircle } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
+import Link from 'next/link'
 
 const About = () => {
-  const stats = [
-    {
-      icon: Clock,
-      value: "25+",
-      label: "Years of Experience",
-      color: "from-green-400 to-emerald-500",
-      bgColor: "bg-green-50"
-    },
-    {
-      icon: Users,
-      value: "200+",
-      label: "Happy Clients",
-      color: "from-blue-400 to-cyan-500",
-      bgColor: "bg-blue-50"
-    },
-    {
-      icon: Briefcase,
-      value: "500+",
-      label: "Projects Completed",
-      color: "from-purple-400 to-violet-500",
-      bgColor: "bg-purple-50"
-    },
-    {
-      icon: Award,
-      value: "15+",
-      label: "Industry Awards",
-      color: "from-orange-400 to-red-500",
-      bgColor: "bg-orange-50"
-    }
-  ]
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-gray-50/30 to-white relative overflow-hidden">
-      {/* Premium Background Elements */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-green-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-l from-orange-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
+    <section className="py-24 bg-gradient-to-b from-white via-orange-50/30 to-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-orange-200/20 to-amber-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-l from-green-200/20 to-orange-200/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Premium Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 text-green-700 px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg backdrop-blur-sm border border-green-200/50"
+            className="inline-flex items-center bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-lg"
+            whileHover={{ scale: 1.05 }}
           >
-            <Briefcase className="h-5 w-5 mr-2" />
-            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-              ABOUT KRISHNA CARE
-            </span>
+            <Star className="h-5 w-5 mr-2" />
+            KRISHNA CARE OVERVIEW
           </motion.div>
           
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-            Your Trusted Partner in{" "}
-            <span className="bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Delivering Excellence in{" "}
+            <span className="bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
               Agricultural Logistics
             </span>
           </h2>
+          
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Since 1995, we have been India's trusted partner in agricultural supply chains, 
+            connecting manufacturers with markets through reliable clearing and forwarding services.
+          </p>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
-          {/* Left Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {/* Company Description */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/60 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-green-100/30 to-transparent rounded-full blur-2xl"></div>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-lg text-gray-700 leading-relaxed mb-6 relative z-10"
-              >
-                Established in <span className="font-semibold text-green-600">1995</span>, Krishna Care has emerged as one of India's most reliable clearing and forwarding agents, specializing in the <span className="font-semibold text-blue-600">agricultural sector</span>. We serve as the critical link between manufacturers and markets, ensuring efficient movement of fertilizers and agricultural products across the country.
-              </motion.p>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-lg text-gray-700 leading-relaxed relative z-10"
-              >
-                Our deep understanding of agricultural supply chains, combined with our extensive network and technological capabilities, enables us to deliver exceptional logistics solutions that drive growth for our partners and contribute to India's agricultural success.
-              </motion.p>
+        {/* Quick Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 mb-16"
+        >
+          <div className="text-center group">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100/50 hover:shadow-xl transition-all duration-300">
+              <div className="bg-gradient-to-r from-orange-400 to-amber-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">25+</h3>
+              <p className="text-gray-600 font-medium">Years of Experience</p>
             </div>
+          </div>
+          
+          <div className="text-center group">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100/50 hover:shadow-xl transition-all duration-300">
+              <div className="bg-gradient-to-r from-green-400 to-emerald-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">200+</h3>
+              <p className="text-gray-600 font-medium">Happy Clients</p>
+            </div>
+          </div>
+          
+          <div className="text-center group">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-orange-100/50 hover:shadow-xl transition-all duration-300">
+              <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">500+</h3>
+              <p className="text-gray-600 font-medium">Projects Completed</p>
+            </div>
+          </div>
+        </motion.div>
 
-            {/* Mission & Vision Cards */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-lg border border-green-100/50 relative overflow-hidden group hover:shadow-xl transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: 0.6, type: "spring", bounce: 0.5 }}
-                  className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl mb-6 relative z-10"
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.div
+            className="bg-gradient-to-r from-orange-500 to-amber-500 p-12 rounded-3xl text-white relative overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.div
+              className="absolute inset-0 opacity-20"
+              animate={{
+                background: [
+                  'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%)',
+                  'radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%)',
+                  'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2) 0%, transparent 50%)',
+                ]
+              }}
+              transition={{ duration: 4, repeat: Infinity }}
+            />
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold mb-4">Want to Learn More About Us?</h3>
+              <p className="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">
+                Discover our complete story, mission, vision, and meet our leadership team 
+                that has been driving agricultural logistics excellence for over 25 years.
+              </p>
+              
+              <Link href="/about">
+                <motion.button
+                  className="bg-white text-orange-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-orange-50 transition-all duration-300 flex items-center gap-3 mx-auto group shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Target className="h-8 w-8 text-green-600" />
-                </motion.div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">Our Mission</h3>
-                <p className="text-gray-700 leading-relaxed relative z-10">
-                  To provide exceptional clearing and forwarding services that enable seamless agricultural supply chains and contribute to India's food security.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-lg border border-blue-100/50 relative overflow-hidden group hover:shadow-xl transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: 0.8, type: "spring", bounce: 0.5 }}
-                  className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6 relative z-10"
-                >
-                  <Eye className="h-8 w-8 text-blue-600" />
-                </motion.div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">Our Vision</h3>
-                <p className="text-gray-700 leading-relaxed relative z-10">
-                  To be the most trusted and innovative logistics partner in India's agricultural sector, setting new standards of excellence.
-                </p>
-              </motion.div>
+                  Explore Our Story
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
-
-          {/* Right Column - Statistics */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 60, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  delay: 0.2 + index * 0.1, 
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                className="group relative"
-              >
-                <div className={`h-full ${stat.bgColor}/50 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/60 text-center relative overflow-hidden group-hover:shadow-2xl transition-all duration-500`}>
-                  {/* Premium Background Pattern */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl ${stat.color} opacity-10 rounded-full blur-2xl`}></div>
-                  </div>
-
-                  {/* Icon */}
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ 
-                      delay: 0.3 + index * 0.1, 
-                      duration: 0.8,
-                      type: "spring",
-                      stiffness: 200
-                    }}
-                    whileHover={{ 
-                      scale: 1.2,
-                      rotate: 10,
-                      transition: { duration: 0.3 }
-                    }}
-                    className={`inline-flex items-center justify-center w-16 h-16 ${stat.bgColor} rounded-2xl mb-6 shadow-lg mx-auto relative z-10`}
-                  >
-                    <stat.icon className={`h-8 w-8 bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`} />
-                  </motion.div>
-
-                  {/* Counter Animation */}
-                  <motion.h4 
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ 
-                      delay: 0.5 + index * 0.1, 
-                      duration: 0.6,
-                      type: "spring"
-                    }}
-                    className="text-4xl font-bold text-gray-900 mb-3 relative z-10"
-                  >
-                    {stat.value}
-                  </motion.h4>
-                  
-                  <motion.p 
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
-                    className="text-gray-600 font-medium text-sm leading-tight relative z-10"
-                  >
-                    {stat.label}
-                  </motion.p>
-
-                  {/* Premium Accent Line */}
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ delay: 0.8 + index * 0.1, duration: 0.8 }}
-                    className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${stat.color} rounded-full`}
-                  />
-
-                  {/* Hover Glow Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

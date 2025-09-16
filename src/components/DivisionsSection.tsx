@@ -197,6 +197,109 @@ const DivisionsSection = () => {
           </motion.p>
         </motion.div>
 
+        {/* Client Logos Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="text-center mb-8">
+            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+              TRUSTED BY LEADING COMPANIES
+            </span>
+          </div>
+          
+          <div className="relative overflow-hidden bg-white/50 backdrop-blur-sm rounded-2xl p-6">
+            {/* Scrolling logos container */}
+            <motion.div
+              className="flex space-x-12 items-center"
+              animate={{
+                x: [0, -1920]
+              }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              style={{ width: 'calc(200% + 48px)' }}
+            >
+              {/* First set of logos */}
+              <div className="flex space-x-12 items-center flex-shrink-0">
+                <div className="h-12 w-32 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">UNJHA PHARMA</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BHARAT SERUMS</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">SINAG HEALTH</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">MORWELL</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BAYER</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">UPL LIMITED</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">SYNGENTA</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">ASIAN PAINTS</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BERGER</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">NEROLAC</span>
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex space-x-12 items-center flex-shrink-0">
+                <div className="h-12 w-32 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">UNJHA PHARMA</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BHARAT SERUMS</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">SINAG HEALTH</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">MORWELL</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BAYER</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">UPL LIMITED</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">SYNGENTA</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">ASIAN PAINTS</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">BERGER</span>
+                </div>
+                <div className="h-12 w-32 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">NEROLAC</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Gradient overlays for smooth fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+          </div>
+        </motion.div>
+
         {/* Premium Tabs Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
