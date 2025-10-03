@@ -34,7 +34,7 @@ const About = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Delivering Excellence in{" "}
             <span className="bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
-              Agricultural Logistics
+              Warehousing & Logistics
             </span>
           </h2>
           

@@ -1,5 +1,5 @@
 import Header from '@/components/Header'
-import PhotoGallery from '@/components/PhotoGallery'
+import FullGallery from '@/components/FullGallery'
 import BannerSection from '@/components/BannerSection'
 import ExperienceClients from '@/components/ExperienceClients'
 import Footer from '@/components/Footer'
@@ -8,7 +8,7 @@ export default function GalleryPage() {
   return (
     <main>
       <Header />
-      <PhotoGallery />
+      <FullGallery />
       <BannerSection />
       <ExperienceClients />
       <Footer />

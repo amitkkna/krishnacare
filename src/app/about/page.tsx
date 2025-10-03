@@ -4,6 +4,7 @@ import AboutHero from '@/components/about/AboutHero'
 import CompanyStory from '@/components/about/CompanyStory'
 import MissionVision from '@/components/about/MissionVision'
 import VisinaryLeaders from '@/components/about/VisinaryLeaders'
+import SisterCompanies from '@/components/SisterCompanies'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function AboutPage() {
         <CompanyStory />
         <MissionVision />
         <VisinaryLeaders />
+        <SisterCompanies />
       </main>
       <Footer />
     </>

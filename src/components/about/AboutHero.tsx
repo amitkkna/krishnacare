@@ -48,14 +48,14 @@ export default function AboutHero() {
             </motion.span>
           </motion.h1>
           
-          <motion.p 
+          <motion.p
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Pioneering healthcare excellence across India with unwavering commitment to quality, 
-            innovation, and compassionate care that transforms lives and builds healthier communities.
+            Pioneering C & F excellence across India with unwavering commitment to quality,
+            innovation, and compassionate care that transforms lives and builds better communities.
           </motion.p>
         </motion.div>
 
