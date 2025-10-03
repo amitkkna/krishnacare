@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import ImageModal from './ImageModal'
+import { staticGalleryImages } from '@/lib/staticData'
 
 interface GalleryImage {
   id: string
@@ -85,9 +86,44 @@ const PhotoGallery = () => {
         setTotalCount(data.pagination.totalCount)
         setCurrentPage(page)
         setCategories(data.categories || [])
+      } else {
+        // Fallback to static data if API fails
+        const staticImages = staticGalleryImages.map(img => ({
+          id: img.id,
+          title: img.title,
+          description: img.description,
+          imageUrl: img.imageUrl,
+          category: img.category,
+          altText: img.altText,
+          createdAt: new Date().toISOString()
+        }))
+        
+        if (reset) {
+          setGalleryImages(staticImages)
+        }
+        setHasMore(false)
+        setTotalCount(staticImages.length)
+        setCategories(['Infrastructure', 'Logistics', 'Quality', 'Community', 'Operations'])
       }
     } catch (error) {
       console.error('Failed to fetch gallery images:', error)
+      // Fallback to static data on error
+      const staticImages = staticGalleryImages.map(img => ({
+        id: img.id,
+        title: img.title,
+        description: img.description,
+        imageUrl: img.imageUrl,
+        category: img.category,
+        altText: img.altText,
+        createdAt: new Date().toISOString()
+      }))
+      
+      if (reset) {
+        setGalleryImages(staticImages)
+      }
+      setHasMore(false)
+      setTotalCount(staticImages.length)
+      setCategories(['Infrastructure', 'Logistics', 'Quality', 'Community', 'Operations'])
     } finally {
       setLoading(false)
       setLoadingMore(false)

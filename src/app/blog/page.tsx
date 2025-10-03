@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { staticBlogPosts } from '@/lib/staticData'
 
 interface BlogPost {
   id: string
@@ -41,9 +42,39 @@ export default function BlogPage() {
         setTotalPages(data.pagination.pages)
       } else {
         console.error('Failed to fetch posts:', response.status, response.statusText)
+        // Fallback to static data if API fails
+        const staticPosts = staticBlogPosts.map(post => ({
+          id: post.id,
+          title: post.title,
+          slug: post.slug,
+          excerpt: post.excerpt,
+          imageUrl: post.imageUrl,
+          author: post.author,
+          category: post.category,
+          tags: post.tags.join(', '),
+          viewCount: 0,
+          createdAt: post.publishedAt
+        }))
+        setPosts(staticPosts)
+        setTotalPages(1)
       }
     } catch (error) {
       console.error('Failed to fetch posts:', error)
+      // Fallback to static data on error
+      const staticPosts = staticBlogPosts.map(post => ({
+        id: post.id,
+        title: post.title,
+        slug: post.slug,
+        excerpt: post.excerpt,
+        imageUrl: post.imageUrl,
+        author: post.author,
+        category: post.category,
+        tags: post.tags.join(', '),
+        viewCount: 0,
+        createdAt: post.publishedAt
+      }))
+      setPosts(staticPosts)
+      setTotalPages(1)
     } finally {
       setLoading(false)
     }

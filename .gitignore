@@ -94,3 +94,9 @@ tmp/
 temp/
 
 /generated/prisma
+
+# Database files
+prisma/dev.db
+prisma/dev.db-journal
+*.db
+*.db-journal
